@@ -14,6 +14,8 @@ Tengine + Babassl支持国密的思路来自 [Tengine + BabaSSL ，让国密更�
 
 rpm构建：   
 ```shell
+mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}  
+yum install gcc gcc-c++ zlib-devel pcre-devel automake autoconf libtool make rpm-build   
 tar -xcf tengine-2.3.3.20211208.tar.gz tengine-2.3.3.20211208  
 cp tengine-2.3.3.20211208.tar.gz ~/rpmbuild/SOURCES/  
 cp rpm/tengine.spec ~/rpmbuild/SPEC/   
