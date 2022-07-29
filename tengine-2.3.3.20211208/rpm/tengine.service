@@ -1,0 +1,17 @@
+[Unit]
+Description=The nginx HTTP and reverse proxy server
+
+[Service]
+Type=forking
+PIDFile=/usr/share/tengine/logs/nginx.pid
+ExecStartPre=/usr/bin/rm -f /usr/share/tengine/logs/nginx.pid
+ExecStartPre=/usr/share/tengine/sbin/nginx -t
+ExecStart=/usr/share/tengine/sbin/nginx
+ExecReload=/bin/kill -s HUP $MAINPID
+KillSignal=SIGQUIT
+TimeoutStopSec=5
+KillMode=mixed
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
