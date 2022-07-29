@@ -12,7 +12,7 @@ Tengine + Babassl支持国密的思路来自 [Tengine + BabaSSL ，让国密更�
 
 编译构建具体命令参考rpm目录下面的tengine.spec。
 
-rpm构建：   
+rpm构建(不要安装rpmdevtools，在lns8.3有版本依赖冲突)：   
 ```shell
 mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}  
 yum install gcc gcc-c++ zlib-devel pcre-devel automake autoconf libtool make rpm-build   
